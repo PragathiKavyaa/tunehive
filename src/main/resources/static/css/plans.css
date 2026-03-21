@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(90deg, #1e1e3f, #5a2a3d);
+    color: white;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    /* transparent white */
+    backdrop-filter: blur(8px);
+    position: fixed;
+    /* fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FF0067;
+    /* pink color */
+}
+
+.navbar nav a,
+.nav-right a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar input {
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+/* Down arrow style */
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* MAIN LAYOUT */
+
+.container {
+    display: flex;
+    height: calc(100vh - 70px);
+    /* subtract navbar height */
+    margin-top: 30px;
+    padding: 5px 20px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 300px;
+    /* increase width */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid black;
+    padding: 20px;
+    position: fixed;
+    /* fixed sidebar */
+    top: 60px;
+    /* below navbar */
+    left: 0;
+    height: calc(95vh - 50px);
+    /* fit screen height */
+    bottom: 0;
+    display: flex;
+    /* enable flex */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 100px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.menu-arrow {
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.playlist {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff2f7a;
+    color: white;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    flex: 1;
+    padding: 0;
+    margin-left: 300px;
+    /* same as sidebar width */
+    margin-top: 0;
+    /* same as navbar height */
+    height: 90%;
+}
+
+.plans {
+    padding: 0;
+}
+
+.plans h2 {
+    margin-top: 30px;
+    width: 90%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+
+.plans-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan-card {
+    flex: 1;
+    padding: 20px;
+    min-height: 200px;
+    max-width: 300px;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.plan-card h3 {
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: white;
+    color: black;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    justify-content: center;
+}
+
+.plan-card li {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.plan-card i {
+    margin-right: 8px;
+    color: #ddd;
+}
+
+.price {
+    background: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.price del {
+    color: gray;
+    margin-right: 6px;
+}
+
+.lite-btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.lite-btns button {
+    background: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.renew {
+    margin-top: 10px;
+    font-size: 13px;
+    color: white;
+    background-color:#aaa;
+    width: 280px;
+    height: 20px;
+    
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.small {
+    font-size: 12px;
+    color: white;
+    background-color:#aaa;
+    width: 280px;
+    height: 25px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 5px;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.footer .f1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.footer .f2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MUSIC PLAYER */
+
+.player-icons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.icon1,
+.icon2,
+.icon3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon2 {
+    justify-content: center;
+    flex: 1;
+}
+
+.icon1 {
+    flex: 1;
+}
+
+.icon3 {
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.player-icons i {
+    cursor: pointer;
+}
+
+.time {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        border: none;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .plans-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    .plan-card {
+        width: 100%;
+    }
+
+    .player-icons {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+        overflow-y: auto;
+        height: 100vh;
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    .plans-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        min-height: 150px;
+    }
+
+    .plan-card {
+        flex: 1 1 35%;
+    }
+
+    .player-icons {
+        font-size: 16px;
+    }
+}
+

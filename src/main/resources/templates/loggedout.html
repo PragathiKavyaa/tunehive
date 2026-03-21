@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tune Music Player - Logged Out</title>
+    <link rel="stylesheet" th:href="@{/css/loggedout.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+    
+    <p class="message">You have been logged out.<br>Thank you for using Tune Music Player. See you soon!</p>
+    <div class="buttons">
+        <button class="login-btn" id="loginBtn">Login again</button>
+        <button class="home-btn" id="homeBtn">Go to home page</button>
+    </div>
+
+    <script th:src="@{/js/loggedout.js}"></script>
+</body>
+</html>

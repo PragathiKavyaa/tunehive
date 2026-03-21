@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(90deg, #1e1e3f, #5a2a3d);
+    color: white;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    /* transparent white */
+    backdrop-filter: blur(8px);
+    position: fixed;
+    /* fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FF0067;
+    /* pink color */
+}
+
+.navbar nav a,
+.nav-right a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar input {
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+/* Down arrow style */
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* MAIN LAYOUT */
+
+.container {
+    display: flex;
+    height: calc(100vh - 70px);
+    /* subtract navbar height */
+    margin-top: 50px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 300px;
+    /* increase width */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid black;
+    padding: 20px;
+    position: fixed;
+    /* fixed sidebar */
+    top: 60px;
+    /* below navbar */
+    left: 0;
+    height: calc(95vh - 70px);
+    /* fit screen height */
+    bottom: 0;
+    display: flex;
+    /* enable flex */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 100px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.menu-arrow {
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.playlist {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff2f7a;
+    color: white;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    flex: 1;
+    padding: 5px;
+    margin-left: 250px;
+    /* same as sidebar width */
+    margin-top: 0;
+    /* same as navbar height */
+    height: 80%;
+    justify-items: center;
+}
+
+/* MAIN PLAYER */
+.player {
+  width: 90%;
+  max-width: 900px;
+  height: 70%;
+  padding: 5px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-content {
+  text-align: center;
+  color: #fff;
+}
+
+/* IMAGE */
+.album-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.song-title {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.artist {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* PROGRESS */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #ddd;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress {
+  width: 30%;
+  height: 100%;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* CONTROLS */
+
+.control{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls {
+  margin: 20px 0;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* VOLUME */
+.volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.volume input {
+  width: 150px;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer .f1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.footer .f2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MUSIC PLAYER */
+
+.player-icons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.icon1,
+.icon2,
+.icon3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon2 {
+    justify-content: center;
+    flex: 1;
+}
+
+.icon1 {
+    flex: 1;
+}
+
+.icon3 {
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.player-icons i {
+    cursor: pointer;
+}
+
+.time {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        border: none;
+    }
+
+    .main {
+        margin-left: 0;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player {
+        width: 100%;
+        height: auto;
+    }
+
+    .album-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .controls button {
+        font-size: 18px;
+    }
+
+    .volume input {
+        width: 100px;
+    }
+
+    .player-icons {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player {
+        width: 80%;
+        height: auto;
+    }
+
+    .album-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .controls button {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .sidebar {
+        width: 300px;
+    }
+
+    .main {
+        margin-left: 300px; /* FIX your mismatch */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .player {
+        width: 70%;
+        max-width: 900px;
+    }
+}

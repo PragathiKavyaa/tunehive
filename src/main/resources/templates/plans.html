@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Hive</title>
+    <link rel="stylesheet" th:href="@{/css/plans.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">🎧 TUNE HIVE</div>
+
+        <nav>
+            <a href="#">Music <span class="arrow">▼</span></a>
+            <a href="#">Podcasts <span class="arrow">▼</span></a>
+            <a href="#">Pro <span class="arrow">▼</span></a>
+        </nav>
+
+        <input type="text" placeholder="Search">
+
+        <div class="nav-right">
+            <a href="#">Music Language <span class="arrow">▼</span></a>
+            <a href="#">Login <span class="arrow">▼</span></a>
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>BROWSE</h3>
+
+            <ul>
+                <li>New Release <span class="menu-arrow">▼</span></li>
+                <li>Top Charts <span class="menu-arrow">▼</span></li>
+                <li>Top Playlists <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Top Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <h3>LIBRARY</h3>
+
+            <ul>
+                <li>History <span class="menu-arrow">▼</span></li>
+                <li>Liked Songs <span class="menu-arrow">▼</span></li>
+                <li>Albums <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <button class="playlist">+ New Playlist</button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+
+            <section class="plans">
+
+                <h2>Available Plans</h2>
+
+                <div class="plans-container">
+
+                    <!-- PLAN 1 -->
+                    <div class="plan-card">
+                        <h3>Pro Individual <span class="tag">For you</span></h3>
+
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> Ad-free Music</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Hires tunes</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Downloads</li>
+                            <li><i class="fa-solid fa-circle-check"></i> 2X Better sound Quality</li>
+                        </ul>
+
+                        <a href="/payment">
+                        <button class="price" type="submit">
+                            <del>₹199</del> ₹9 for 2 months
+                        </button>
+                    </a>
+
+                        <p class="renew">Renews in 1 month</p>
+                    </div>
+
+
+                    <!-- PLAN 2 -->
+                    <div class="plan-card">
+                        <h3>Pro Student <i class="fa-solid fa-circle-info"></i></h3>
+
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> Ad-free Music</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Hires tunes</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Downloads</li>
+                            <li><i class="fa-solid fa-circle-check"></i> 2X Better sound Quality</li>
+                        </ul>
+
+                        <a href="/payment">
+                        <button class="price" type="submit">
+                            <del>₹99</del> ₹49/months
+                        </button>
+                    </a>
+
+                        <p class="renew">Save upto 67% only for students</p>
+                    </div>
+
+
+                    <!-- PLAN 3 -->
+                    <div class="plan-card">
+                        <h3>Pro Lite <i class="fa-solid fa-circle-info"></i></h3>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> Ad-free Music</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Downloads</li>
+                        </ul>
+
+                        <div class="lite-btns">
+                            <a href="/payment">
+                            <button type="submit">₹9/day > </button>
+                            <button type="submit">₹29/Week > </button>
+                            </a>
+                        </div>
+
+                        <p class="renew small">Unlimited Hires tune not available with Pro lite</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <section class="f1">
+                    <div>
+
+                        <h4>Top Artists</h4><br>
+
+                        <p>Neha Kakkar</p>
+                        <p>Arijit Singh</p>
+                        <p>Justin Bieber</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Top Actors</h4><br>
+
+                        <p>Rajini</p>
+                        <p>Vijay</p>
+                        <p>Surya</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Devotional Songs</h4><br>
+
+                        <p>Krishna</p>
+                        <p>Deva Shree</p>
+                        <p>Ganesh</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Languages</h4><br>
+
+                        <p>Hindi</p>
+                        <p>Tamil</p>
+                        <p>Telugu</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Artist Original</h4><br>
+
+                        <p>Abshct</p>
+                        <p>Sjdueb</p>
+                        <p>Dteunv</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Company</h4><br>
+
+                        <p>About Us</p>
+                        <p>Culture</p>
+                        <p>Blogs</p>
+                        <p>Jobs</p>
+                        <p>Press</p>
+
+                    </div>
+                </section>
+                <section class="f2">
+                    <div class="copyright">
+                        <p>@ 2025 Tune Hire Media Limited All Rights Reserved</p>
+                    </div>
+                    <div class="follow">
+                        <p>FOLLOW US</p>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-amazon"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </section>
+
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- MUSIC PLAYER -->
+
+    <div class="player-icons">
+
+        <div class="icon1">
+
+        </div>
+
+        <div class="icon2">
+            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-backward-step"></i>
+            <i class="fa-solid fa-play"></i>
+            <i class="fa-solid fa-forward-step"></i>
+            <i class="fa-solid fa-shuffle"></i>
+        </div>
+
+        <div class="icon3">
+            <span class="time">0:00 / 0:00</span>
+
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-ellipsis"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-expand"></i>
+        </div>
+    </div>
+
+    <script th:src="@{/js/script.js}"></script>
+
+</body>
+
+</html>

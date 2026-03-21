@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Hive</title>
+    <link rel="stylesheet" href="/css/account.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">🎧 TUNE HIVE</div>
+
+        <nav>
+            <a href="#">Music <span class="arrow">▼</span></a>
+            <a href="#">Podcasts <span class="arrow">▼</span></a>
+            <a href="#">Pro <span class="arrow">▼</span></a>
+        </nav>
+
+        <input type="text" placeholder="Search">
+
+        <div class="nav-right">
+            <a href="#">Music Language <span class="arrow">▼</span></a>
+            <a href="#">Login <span class="arrow">▼</span></a>
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>BROWSE</h3>
+
+            <ul>
+                <li>New Release <span class="menu-arrow">▼</span></li>
+                <li>Top Charts <span class="menu-arrow">▼</span></li>
+                <li>Top Playlists <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Top Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <h3>LIBRARY</h3>
+
+            <ul>
+                <li>History <span class="menu-arrow">▼</span></li>
+                <li>Liked Songs <span class="menu-arrow">▼</span></li>
+                <li>Albums <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <button class="playlist">+ New Playlist</button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+            <h2 class="title">Profile</h2>
+            <div class="content">
+
+                <!-- Profile Card -->
+                <div class="card profile-card">
+                    <h3>Profile</h3>
+
+                    <div class="profile-info">
+                        <div class="avatar">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <div>
+                            <p>User Name</p>
+                            <h4 th:text="${username}">User Name</h4>
+
+                            <p>Email</p>
+                            <h4 th:text="${email}">email@example.com</h4>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button>Edit profile</button>
+                        <button>Change Password</button>
+                    </div>
+                </div>
+
+                <!-- Subscription -->
+                <div class="card">
+                    <h3>Subscription</h3>
+                    <p>Plan: <span class="highlight">Premium</span></p>
+                    <p>Renewal: Jan 31, 2026</p>
+
+                    <div class="btns">
+                        <button>Manage subscription</button>
+                        <button>View payment method</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Connected Devices & Integrations</h3>
+
+                    <div class="device">
+                        <span><i class="fa-solid fa-mobile"></i> iphone 15 Pro</span>
+                        <span>Status <span class="dot"></span></span>
+                    </div>
+
+                    <div class="device">
+                        <span><i class="fa-solid fa-laptop"></i> Macbook Pro</span>
+                        <span>Status <span class="dot"></span></span>
+                    </div>
+
+                    <div class="device">
+                        <span><i class="fa-solid fa-volume-high"></i> Sonos Speaker</span>
+                        <span>Status <span class="dot"></span></span>
+                    </div>
+
+                    <div class="btns">
+                        <button>Manage Details</button>
+                        <button>Connect New Device</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Settings</h3>
+
+                    <div class="setting">
+                        <span>Dark mode</span>
+                        <label class="switch">
+                            <input type="checkbox" id="darkToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting">
+                        <span>High Quality Audio</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting">
+                        <span>Download over Wi-Fi only</span>
+                        <a href="/logout">
+                            <button class="logout">Logout</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

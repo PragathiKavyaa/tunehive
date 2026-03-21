@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tune Hive</title>
+  <link rel="stylesheet" th:href="@{/css/welcome.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>Welcome to Tune Hive</h1>
+      <p class="subhead">Login in or sign up with your mobile number</p>
+
+      <form th:action="@{/send-otp}" method="post">
+
+        <input type="text" name="phone" placeholder="Enter mobile number" required>
+
+        <button onclick="handleContinue()">Continue</button>
+
+        <p>
+          Select 'continue' to give consent to Tune Hire Terms of Service and acknowledge that you have
+          read and understood the Privacy Policy. As SMS may be sent to authenticate your account, and
+          message and data rates may apply.
+        </p>
+
+        <div class="terms">
+          <input type="checkbox" id="agree" required>
+          <label for="agree">I agree to all the Terms and Conditions</label>
+        </div>
+
+      </form>
+
+      <p class="or">Or</p>
+
+      <div class="social">
+        <button>Google</button>
+        <button>Facebook</button>
+      </div>
+
+      <p class="login-link">Already have an account? <a th:href="@{login}">login</a></p>
+    </div>
+
+    <div class="right">
+      <img th:src="@{/images/music.png}" alt="Music Image">
+    </div>
+  </div>
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

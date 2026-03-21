@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Hive</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">🎧 TUNE HIVE</div>
+
+        <nav>
+            <a href="#">Music <span class="arrow">▼</span></a>
+            <a href="#">Podcasts <span class="arrow">▼</span></a>
+            <a th:href="@{/plans}">Pro <span class="arrow">▼</span></a>
+        </nav>
+
+        <input type="text" placeholder="Search">
+
+        <div class="nav-right">
+            <a href="#">Music Language <span class="arrow">▼</span></a>
+            <a href="#">Login <span class="arrow">▼</span></a>
+            <a href="#">Sign up <span class="arrow">▼</span></a>
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>BROWSE</h3>
+
+            <ul>
+                <li>New Release <span class="menu-arrow">▼</span></li>
+                <li>Top Charts <span class="menu-arrow">▼</span></li>
+                <li>Top Playlists <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Top Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <h3>LIBRARY</h3>
+
+            <ul>
+                <li>History <span class="menu-arrow">▼</span></li>
+                <li>Liked Songs <span class="menu-arrow">▼</span></li>
+                <li>Albums <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <button class="playlist">+ New Playlist</button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+
+            <section class="album-section">
+                <section class="album-area">
+
+                    <img th:src="@{images/music1.jpg}" class="album-cover">
+
+                    <div class="album-info">
+
+                        <h1>MAJILI</h1>
+
+                        <p>by Various Artists • 7 Songs • 32:35</p>
+
+                        <button class="play-btn">Play</button>
+
+                    </div>
+
+                </section>
+
+                <!-- SONG LIST -->
+
+                <section class="songs">
+
+                    <div class="song">
+                        <span class="song-number">
+                            <span class="number">1</span>
+                            <span class="play-icon">▶</span>
+                        </span>
+                        <p>Majili</p>
+                        <p>Tanish Bagachi, Faheem Abdullah, Arslan Irsland Kamil</p>
+                        <span>5:00</span>
+                    </div>
+
+                    <div class="song">
+                        <span class="song-number">
+                            <span class="number">2</span>
+                            <span class="play-icon">▶</span>
+                        </span>
+                        <p>Barbaad</p>
+                        <p>Talented musicians such as Tanish Bagachi, Faheem Abdullah</p>
+                        <span>4:20</span>
+                    </div>
+
+                    <div class="song">
+                        <span class="song-number">
+                            <span class="number">3</span>
+                            <span class="play-icon">▶</span>
+                        </span>
+                        <p>Tum Ho Toh</p>
+                        <p>Saiyaaraa is a hindi language album released</p>
+                        <span>3:40</span>
+                    </div>
+
+                    <div class="song">
+                        <span class="song-number">
+                            <span class="number">4</span>
+                            <span class="play-icon">▶</span>
+                        </span>
+                        <p>Dhun</p>
+                        <p>Saiyaara is composed by various artists</p>
+                        <span>3:50</span>
+                    </div>
+
+                    <div class="song">
+                        <span class="song-number">
+                            <span class="number">5</span>
+                            <span class="play-icon">▶</span>
+                        </span>
+                        <p>Halli</p>
+                        <p>Saiyaara is composed by various artists</p>
+                        <span>5:00</span>
+                    </div>
+
+                </section>
+            </section>
+
+            <!-- You Might Like-->
+
+            <h2>You Might Like</h2><br><br>
+
+            <div class="albums">
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music2.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music3.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music4.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music5.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music6.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music7.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music8.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+            </div>
+
+
+            <!-- TRENDING ALBUMS -->
+
+            <h2>Currently Trending Albums</h2><br><br>
+
+            <div class="albums">
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music9.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music10.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music2.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music3.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music4.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music5.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music6.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+            </div>
+
+
+            <!-- PODCASTS -->
+
+            <h2>Podcasts</h2><br><br>
+
+            <div class="albums">
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music7.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music8.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music9.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music10.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music1.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music2.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+
+                        <img th:src="@{images/music3.jpg}" alt="album">
+                        <div class="overlay"></div>
+                        <button class="play-btn-card">▶</button>
+                        <button class="wishlist-btn">♥</button>
+                        <button class="more-btn">...</button>
+
+                    </div>
+                    <p>Latest Hindi Songs</p>
+                    <p>2.9k fans</p>
+                </div>
+
+            </div>
+
+
+            <!-- ABOUT -->
+
+            <section class="about">
+
+                <h3>About Tune Hire</h3>
+
+                <p>
+                    Tune Hive is a Hindi album released in 2025. There are a total of 7 songs in Tune Hire.
+                    The songs were composed by talented musicians.
+                </p>
+
+            </section><br><br>
+
+
+            <!-- FAQ -->
+
+            <section class="faq">
+
+                <h3>FAQs for Tune Hire</h3>
+
+                <div class="faq-item">
+                    <button class="faq-btn">When was Tune Hire released? <span class="faq-arrow">▼</span></button>
+                    <div class="faq-content">Tune Hire was released in 2025.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">What are the popular songs? <span class="faq-arrow">▼</span></button>
+                    <div class="faq-content">Majili, Barbaad and Dhun.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-btn">How can I download songs? <span class="faq-arrow">▼</span></button>
+                    <div class="faq-content">Songs can be downloaded on JioSaavn App.</div>
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <section class="f1">
+                    <div>
+
+                        <h4>Top Artists</h4><br><br>
+
+                        <p>Neha Kakkar</p>
+                        <p>Arijit Singh</p>
+                        <p>Justin Bieber</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Top Actors</h4><br><br>
+
+                        <p>Rajini</p>
+                        <p>Vijay</p>
+                        <p>Surya</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Devotional Songs</h4><br><br>
+
+                        <p>Krishna</p>
+                        <p>Deva Shree</p>
+                        <p>Ganesh</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Languages</h4><br><br>
+
+                        <p>Hindi</p>
+                        <p>Tamil</p>
+                        <p>Telugu</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Artist Original</h4><br><br>
+
+                        <p>Abshct</p>
+                        <p>Sjdueb</p>
+                        <p>Dteunv</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Company</h4><br><br>
+
+                        <p>About Us</p>
+                        <p>Culture</p>
+                        <p>Blogs</p>
+                        <p>Jobs</p>
+                        <p>Press</p>
+
+                    </div>
+                </section>
+                <section class="f2">
+                    <div class="copyright">
+                        <p>@ 2025 Tune Hive Media Limited All Rights Reserved</p>
+                    </div>
+                    <div class="follow">
+                        <p>FOLLOW US</p>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-amazon"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </section>
+
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- MUSIC PLAYER -->
+
+    <div class="player-icons">
+
+        <div class="icon1">
+
+        </div>
+
+        <div class="icon2">
+            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-backward-step"></i>
+            <i class="fa-solid fa-play"></i>
+            <i class="fa-solid fa-forward-step"></i>
+            <i class="fa-solid fa-shuffle"></i>
+        </div>
+
+        <div class="icon3">
+            <span class="time">0:00 / 0:00</span>
+
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-ellipsis"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-expand"></i>
+        </div>
+    </div>
+
+    <script th:src="@{/js/script.js}"></script>
+
+</body>
+
+</html>

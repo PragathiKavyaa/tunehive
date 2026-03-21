@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tune Hive</title>
+  
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>Enter your 6 Digit Code</h1>
+      <p>We've send your code to the phone number.</p>
+      <p>+98765 43210 Didn\'t get it? Resend the code</p>
+
+      <form action="/verify-otp" method="post">
+
+        <input type="text" name="otp" placeholder="Enter 6 digit code" required>
+
+        <button type="submit">Log In</button>
+
+      </form>
+
+      <p>
+        Select 'Log In' to give consent to Tune Hire Terms of Service and acknowledge that you have
+        read and understood the Privacy Policy.
+      </p>
+
+    </div>
+
+    <div class="right">
+      <img th:src="@{/images/music.png}" alt="Music Image">
+    </div>
+  </div>
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

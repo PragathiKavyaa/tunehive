@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Hive</title>
+    <link rel="stylesheet" th:href="@{/css/success.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">🎧 TUNE HIVE</div>
+
+        <nav>
+            <a href="#">Music <span class="arrow">▼</span></a>
+            <a href="#">Podcasts <span class="arrow">▼</span></a>
+            <a href="#">Pro <span class="arrow">▼</span></a>
+        </nav>
+
+        <input type="text" placeholder="Search">
+
+        <div class="nav-right">
+            <a href="#">Music Language <span class="arrow">▼</span></a>
+            <a href="#">Login <span class="arrow">▼</span></a>
+        </div>
+
+    </header>
+
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h3>BROWSE</h3>
+
+            <ul>
+                <li>New Release <span class="menu-arrow">▼</span></li>
+                <li>Top Charts <span class="menu-arrow">▼</span></li>
+                <li>Top Playlists <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Top Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <h3>LIBRARY</h3>
+
+            <ul>
+                <li>History <span class="menu-arrow">▼</span></li>
+                <li>Liked Songs <span class="menu-arrow">▼</span></li>
+                <li>Albums <span class="menu-arrow">▼</span></li>
+                <li>Podcasts <span class="menu-arrow">▼</span></li>
+                <li>Artists <span class="menu-arrow">▼</span></li>
+            </ul>
+
+            <button class="playlist">+ New Playlist</button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main">
+
+            <div class="success-container">
+
+                <h1>Payment Successful!</h1>
+                <p class="desc">
+                    Your payment for the Pro plan has been successfully processed.
+                    you now have access to all features.
+                </p>
+
+                <h3>Plan Details</h3>
+
+                <div class="details">
+
+                    <div class="left">
+                        <p>Plan name</p>
+                        <p>Billing type</p>
+                        <p>Amount paid</p>
+                        <p>Next payment date</p>
+                    </div>
+
+                    <div class="right">
+                        <p th:text="${planName}">Pro Individual</p>
+                        <p th:text="${billingType}">Monthly</p>
+                        <p th:text="${amount}">₹9.00</p>
+                        <p th:text="${nextDate}">Jan 31, 2026</p>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+                    <a href="/player"><button class="player-btn" id="goPlayer">Go to Player</button></a>
+                    <a href="/account"><button class="account-btn" id="viewAccount">View Account Details</button></a>
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <section class="f1">
+                    <div>
+
+                        <h4>Top Artists</h4><br>
+
+                        <p>Neha Kakkar</p>
+                        <p>Arijit Singh</p>
+                        <p>Justin Bieber</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Top Actors</h4><br>
+
+                        <p>Rajini</p>
+                        <p>Vijay</p>
+                        <p>Surya</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Devotional Songs</h4><br>
+
+                        <p>Krishna</p>
+                        <p>Deva Shree</p>
+                        <p>Ganesh</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Languages</h4><br>
+
+                        <p>Hindi</p>
+                        <p>Tamil</p>
+                        <p>Telugu</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Artist Original</h4><br>
+
+                        <p>Abshct</p>
+                        <p>Sjdueb</p>
+                        <p>Dteunv</p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Company</h4><br>
+
+                        <p>About Us</p>
+                        <p>Culture</p>
+                        <p>Blogs</p>
+                        <p>Jobs</p>
+                        <p>Press</p>
+
+                    </div>
+                </section>
+                <section class="f2">
+                    <div class="copyright">
+                        <p>@ 2025 Tune Hire Media Limited All Rights Reserved</p>
+                    </div>
+                    <div class="follow">
+                        <p>FOLLOW US</p>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-amazon"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                </section>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script th:src="@{/js/success.js}"></script>
+
+</body>
+
+</html>

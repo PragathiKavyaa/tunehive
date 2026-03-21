@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  background: #f5f5f5;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.left {
+  width: 50%;
+  height: 400px;
+  padding: 40px 60px;
+  height: auto;
+}
+.left > *{
+    margin-bottom: 12px;
+}
+.left h1 {
+    margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.left .subhead {
+  color: #666;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #e91e63;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d81b60;
+}
+
+.terms {
+ display: flex;
+  margin-top: 10px;
+  font-size: 14px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.terms input {
+  margin-top: 3px;     /* aligns checkbox with text */
+  width: auto;         /* prevents it from stretching */
+}
+
+.or {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.social{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.social button {
+  width: 35%;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #FF0067;
+  color: black;
+}
+
+.login-link {
+  margin-top: 20px;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  max-width: 80%;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    padding: 20px;
+  }
+
+  .right {
+    margin-top: 20px;
+  }
+
+  .right img {
+    max-width: 70%;
+  }
+
+  .social button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .left {
+    padding: 30px;
+  }
+
+  .right img {
+    max-width: 90%;
+  }
+
+  .social button {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .left {
+    padding: 40px 60px;
+  }
+
+  .right img {
+    max-width: 80%;
+  }
+
+  .social button {
+    width: 35%;
+  }
+}

@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #1e1e3f, #5a2a3d);
+    color: white;
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    /* transparent white */
+    backdrop-filter: blur(8px);
+    position: fixed;
+    /* fixed navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FF0067;
+    /* pink color */
+}
+
+.navbar nav a,
+.nav-right a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar input {
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+/* Down arrow style */
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* MAIN LAYOUT */
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 300px;
+    /* increase width */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid black;
+    padding: 20px;
+    position: fixed;
+    /* fixed sidebar */
+    top: 60px;
+    /* below navbar */
+    left: 0;
+    height: calc(95vh - 70px);
+    /* fit screen height */
+    bottom: 0;
+    display: flex;
+    /* enable flex */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 100px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.menu-arrow {
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.playlist {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff2f7a;
+    color: white;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    flex: 1;
+    padding: 10px;
+    margin-left: 250px;
+    /* same as sidebar width */
+    margin-top: 5px;
+    /* same as navbar height */
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    /* only content scrolls */
+}
+
+/* Hide scrollbar */
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* ALBUM CARDS */
+
+.albums {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    /* horizontal scroll */
+    overflow-y: hidden;
+    /* prevent vertical scroll */
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    /* hide scrollbar (Firefox) */
+}
+
+.albums::-webkit-scrollbar {
+    display: none;
+}
+
+.albums {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.card p {
+    font-size: small;
+    margin-top:10px;
+}
+
+.card {
+    flex: 0 0 auto;
+    /* prevents shrinking */
+    text-align: center;
+    width: 160px;
+    text-align: center;
+}
+
+.card-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide buttons initially */
+
+.play-btn-card,
+.wishlist-btn,
+.more-btn {
+    position: absolute;
+    display: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Play button center */
+
+.play-btn-card {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff2f7a;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/* Wishlist bottom left */
+
+.wishlist-btn {
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+/* More button bottom right */
+
+.more-btn {
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+/* Show buttons on hover */
+
+.card-image:hover .play-btn-card,
+.card-image:hover .wishlist-btn,
+.card-image:hover .more-btn {
+    display: block;
+}
+
+/* overlay background */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0);
+border-radius:10px;
+transition:0.3s;
+}
+/* hover effect */
+
+.card-image:hover .overlay{
+background:rgba(0,0,0,0.4); /* transparent black */
+}
+
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer .f1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.footer .f2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MUSIC PLAYER */
+
+.player-icons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.icon1,
+.icon2,
+.icon3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon2 {
+    justify-content: center;
+    flex: 1;
+}
+
+.icon1 {
+    flex: 1;
+}
+
+.icon3 {
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.player-icons i {
+    cursor: pointer;
+}
+
+.time {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .navbar input {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 120px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        border: none;
+    }
+
+    .main {
+        margin-left: 0;
+        height: auto;
+        padding: 10px;
+    }
+
+    .albums {
+        gap: 10px;
+    }
+
+    .card {
+        width: 120px;
+    }
+
+    .card-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .player-icons {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .icon1, .icon2, .icon3 {
+        justify-content: center;
+    }
+
+    .footer .f2 {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    .navbar input {
+        width: 180px;
+    }
+
+    .albums {
+        gap: 15px;
+    }
+
+    .card {
+        width: 140px;
+    }
+
+    .card-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .player-icons {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .sidebar {
+        width: 300px;
+    }
+
+    .main {
+        margin-left: 300px;
+        padding: 30px 60px;
+    }
+
+    .albums {
+        gap: 20px;
+    }
+
+    .card {
+        width: 160px;
+    }
+
+    .card-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .navbar input {
+        width: 250px;
+    }
+}
