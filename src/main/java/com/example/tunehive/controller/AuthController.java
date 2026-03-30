@@ -26,18 +26,28 @@ public class AuthController {
         return "login";
     }
 
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
+
     // 2️⃣ After phone submit → go to login (OTP page)
     @PostMapping("/send-otp")
-    public String sendOtp(@RequestParam String phone, HttpSession session) {
+    public String sendOtp(@RequestParam("phone") String phone,
+            @RequestParam(value = "agree", required = false) boolean agreed,
+            Model model,
+            HttpSession session) {
 
-        // Save phone in database or send OTP
-        service.saveUser(phone, false);
+        // Save phone number in DB
+        service.saveUser(phone, agreed);
 
-        // ✅ Store phone in session
+        // Store phone in session
         session.setAttribute("phone", phone);
 
-        // Redirect to OTP page
-        return "login"; // login.html (OTP page)
+        // Send phone to login page
+        model.addAttribute("phone", phone);
+
+        return "login";
     }
 
     // 3️⃣ After OTP submit → go to index page
@@ -56,9 +66,11 @@ public class AuthController {
     }
 
     @GetMapping("/account")
-    public String account(Model model) {
+    public String account(Model model, HttpSession session) {
         model.addAttribute("username", "Yazhini");
         model.addAttribute("email", "yazh31@gmail.com");
+        model.addAttribute("planName", session.getAttribute("planName"));
+        model.addAttribute("nextDate", session.getAttribute("nextDate"));
         return "account";
     }
 
@@ -68,41 +80,45 @@ public class AuthController {
     }
 
     @PostMapping("/subscribe")
-    public String subscribe(Model model) {
+    public String subscribe(
+            @RequestParam String planName,
+            @RequestParam String billingType,
+            @RequestParam String amount,
+            @RequestParam String nextDate,
+            Model model,
+            HttpSession session) {
 
-        model.addAttribute("planName", "Pro Individual");
-        model.addAttribute("billingType", "Monthly");
-        model.addAttribute("amount", "₹9.00");
-        model.addAttribute("nextDate", "Jan 31, 2026");
+        model.addAttribute("planName", planName);
+        model.addAttribute("billingType", billingType);
+        model.addAttribute("amount", amount);
+        model.addAttribute("nextDate", nextDate);
+
+        // ✅ store in session for account page
+        session.setAttribute("planName", planName);
+        session.setAttribute("nextDate", nextDate);
 
         return "success";
     }
 
-    @PostMapping("/payment")
-    public String handlePayment(
-            @RequestParam String email,
-            @RequestParam String cardNumber,
-            @RequestParam String cardName,
-            @RequestParam String expiry,
-            @RequestParam String cvv,
-            @RequestParam String country) {
+    @GetMapping("/payment")
+    public String showPaymentPage(
+            @RequestParam(required = false) String planName,
+            @RequestParam(required = false) String billingType,
+            @RequestParam(required = false) String amount,
+            @RequestParam(required = false) String nextDate,
+            Model model) {
 
-        System.out.println("Email: " + email);
-        System.out.println("Card: " + cardNumber);
+        model.addAttribute("planName", planName);
+        model.addAttribute("billingType", billingType);
+        model.addAttribute("amount", amount);
+        model.addAttribute("nextDate", nextDate);
 
-        // TODO: payment logic (or redirect)
-
-        return "success"; // success.html page
+        return "payment";
     }
 
     @GetMapping("/plans")
     public String showPlans() {
         return "plans"; // returns plans.html
-    }
-
-    @GetMapping("/payment")
-    public String showPaymentPage() {
-        return "payment"; // returns payment.html
     }
 
     @GetMapping("/player")

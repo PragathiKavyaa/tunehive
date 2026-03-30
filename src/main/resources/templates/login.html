@@ -15,7 +15,9 @@
     <div class="left">
       <h1>Enter your 6 Digit Code</h1>
       <p>We've send your code to the phone number.</p>
-      <p>+98765 43210 Didn\'t get it? Resend the code</p>
+      <p>
+        +<span th:text="${phone}"></span> Didn\'t get it? Resend the code
+      </p>
 
       <form action="/verify-otp" method="post">
 
@@ -37,7 +39,7 @@
     </div>
   </div>
 
-  <script th:src="@{/js/script.js}"></script>
+  <script th:src="@{/js/login.js}"></script>
 </body>
 
 </html>

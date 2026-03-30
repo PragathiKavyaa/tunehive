@@ -17,16 +17,60 @@
         <div class="logo">🎧 TUNE HIVE</div>
 
         <nav>
-            <a href="#">Music <span class="arrow">▼</span></a>
-            <a href="#">Podcasts <span class="arrow">▼</span></a>
-            <a href="#">Pro <span class="arrow">▼</span></a>
+            <a href="/home">Music <span class="arrow">▼</span></a>
+            <a href="/index">Podcasts <span class="arrow">▼</span></a>
+            <a href="/plans">Pro <span class="arrow">▼</span></a>
         </nav>
 
         <input type="text" placeholder="Search">
 
         <div class="nav-right">
-            <a href="#">Music Language <span class="arrow">▼</span></a>
-            <a href="#">Login <span class="arrow">▼</span></a>
+            <div class="language-dropdown">
+                <a href="#" id="languageToggle">Music Language <span class="arrow">▼</span></a>
+
+                <div class="language-menu" id="languageMenu">
+                    <p class="title">What music do you like?</p>
+                    <small>Pick all the languages you want to listen to.</small>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Malayalam</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Tamil</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Telugu</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Hindi</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Kannada</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Odia</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>Marathi</span>
+                    </label>
+
+                    <button id="updateBtn">Update</button>
+                </div>
+            </div>
+            <a href="/">Login <span class="arrow">▼</span></a>
         </div>
 
     </header>
@@ -40,27 +84,89 @@
 
             <h3>BROWSE</h3>
 
-            <ul>
-                <li>New Release <span class="menu-arrow">▼</span></li>
-                <li>Top Charts <span class="menu-arrow">▼</span></li>
-                <li>Top Playlists <span class="menu-arrow">▼</span></li>
-                <li>Podcasts <span class="menu-arrow">▼</span></li>
-                <li>Top Artists <span class="menu-arrow">▼</span></li>
+            <ul class="menu">
+
+                <li class="menu-item">
+                    <div class="menu-title">New Release ▼</div>
+                    <ul class="submenu">
+                        <li>Latest Albums</li>
+                        <li>Latest Singles</li>
+                        <li>Trending Songs</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Top Charts ▼</div>
+                    <ul class="submenu">
+                        <li>India Top 50</li>
+                        <li>Global Top 50</li>
+                        <li>Weekly Trending</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Top Playlists ▼</div>
+                    <ul class="submenu">
+                        <li>Workout Mix</li>
+                        <li>Chill Hits</li>
+                        <li>Party Songs</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Podcasts ▼</div>
+                    <ul class="submenu">
+                        <li>Tech Podcasts</li>
+                        <li>Motivation</li>
+                        <li>Comedy Shows</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Top Artists ▼</div>
+                    <ul class="submenu">
+                        <li>Arijit Singh</li>
+                        <li>Neha Kakkar</li>
+                        <li>A R Rahman</li>
+                    </ul>
+                </li>
+
             </ul>
 
             <h3>LIBRARY</h3>
 
-            <ul>
-                <li>History <span class="menu-arrow">▼</span></li>
-                <li>Liked Songs <span class="menu-arrow">▼</span></li>
-                <li>Albums <span class="menu-arrow">▼</span></li>
-                <li>Podcasts <span class="menu-arrow">▼</span></li>
-                <li>Artists <span class="menu-arrow">▼</span></li>
+            <ul class="menu">
+
+                <li class="menu-item">
+                    <div class="menu-title">History ▼</div>
+                    <ul class="submenu">
+                        <li>Recently Played</li>
+                        <li>Recently Added</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Liked Songs ▼</div>
+                    <ul class="submenu">
+                        <li>Favorite Songs</li>
+                        <li>Saved Albums</li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <div class="menu-title">Albums ▼</div>
+                    <ul class="submenu">
+                        <li>Hindi Albums</li>
+                        <li>Tamil Albums</li>
+                    </ul>
+                </li>
+
             </ul>
 
-            <button class="playlist">+ New Playlist</button>
+            <a href="/player"><button class="playlist">+ New Playlist</button></a>
 
         </aside>
+
 
 
         <!-- MAIN CONTENT -->
@@ -87,10 +193,10 @@
                     </div>
 
                     <div class="right">
-                        <p th:text="${planName}">Pro Individual</p>
-                        <p th:text="${billingType}">Monthly</p>
-                        <p th:text="${amount}">₹9.00</p>
-                        <p th:text="${nextDate}">Jan 31, 2026</p>
+                        <p th:text="${planName}"></p>
+                        <p th:text="${billingType}"></p>
+                        <p th:text="${amount}"></p>
+                        <p th:text="${nextDate}"></p>
                     </div>
 
                 </div>
@@ -189,6 +295,7 @@
 
     </div>
 
+    <script src="/js/dropdown.js"></script>
     <script th:src="@{/js/success.js}"></script>
 
 </body>

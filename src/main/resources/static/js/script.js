@@ -10,26 +10,6 @@ function pauseSong() {
     alert("Music paused");
 }
 
-
-const faqBtns = document.querySelectorAll(".faq-btn");
-
-faqBtns.forEach(btn => {
-
-    btn.addEventListener("click", function () {
-
-        const content = this.nextElementSibling;
-
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        }
-        else {
-            content.style.display = "block";
-        }
-
-    });
-
-});
-
 // Simple validation
 
 document.querySelector(".subscribe").addEventListener("click", () => {
@@ -75,19 +55,6 @@ function handleContinue() {
   window.location.href = "login.html";
 }
 
-function handleLogin() {
-  const code = document.getElementById("code").value;
-
-  // Simple validation (optional)
-  if (code.length !== 6) {
-    alert("Please enter a valid 6-digit code");
-    return;
-  }
-
-  // Redirect to index page
-  window.location.href = "index.html";
-}
-
 const progress = document.querySelector(".progress");
 const volumeSlider = document.querySelector(".volume input");
 const volumeText = document.querySelector(".volume span");
@@ -106,3 +73,33 @@ volumeSlider.addEventListener("input", () => {
   volumeText.textContent = volumeSlider.value + "%";
 });
 
+//music language drop down menu
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggleBtn = document.getElementById("languageToggle");
+    const menu = document.getElementById("languageMenu");
+    const updateBtn = document.getElementById("updateBtn");
+
+    // Safety check (important)
+    if (!toggleBtn || !menu || !updateBtn) return;
+
+    // Toggle menu
+    toggleBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    });
+
+    // Close on Update
+    updateBtn.addEventListener("click", function () {
+        menu.style.display = "none";
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", function (e) {
+        if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
+            menu.style.display = "none";
+        }
+    });
+
+});
